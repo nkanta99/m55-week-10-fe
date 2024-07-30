@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './App.css'
 import Signup from './components/Signup';
+import Login from './components/Login';
 
 function App() {
   const [user, setUser] = useState(false);
+  const [images, setUsers] = useState([]);
+
+  useEffect(() => {
+    console.log("Hello useEffect")
+  },[])
+  // import.meta.env.VITE_KEY
   return (
     <>
-    <Signup setUser={setUser}/>  
+          <Signup setUser={setUser} user={user} />
+          <Login setUser={setUser} user={user} />
     </>
   );
 }
